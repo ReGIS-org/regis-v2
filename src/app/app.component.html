@@ -1,18 +1,3 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div id='cesiumContainer'>
-  <ac-map>
-    <ac-layer acFor="let plane of planes$" [show]="showTracks" [context]="this">
-        <ac-billboard-desc props="{
-                  image: plane.image,
-                  position: plane.position
-                }">
-        </ac-billboard-desc>
-        <ac-label-desc props="{
-                position: plane.position,
-                text: plane.name
-        }">
-        </ac-label-desc>
-    </ac-layer>
-</ac-map>
-</div>
-
+<app-cesium-map></app-cesium-map>
+<app-projectlogo></app-projectlogo>
