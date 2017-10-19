@@ -2,6 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.4.
 
+## Getting started
+
+If you are just getting started, you should
+
+ - Make sure you have `ng` installed (see [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md)).
+ - Make sure you have required node modules by running `npm install`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
