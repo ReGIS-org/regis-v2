@@ -1,18 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div id='cesiumContainer'>
-  <ac-map>
-    <ac-layer acFor="let plane of planes$" [show]="showTracks" [context]="this">
-        <ac-billboard-desc props="{
-                  image: plane.image,
-                  position: plane.position
-                }">
-        </ac-billboard-desc>
-        <ac-label-desc props="{
-                position: plane.position,
-                text: plane.name
-        }">
-        </ac-label-desc>
-    </ac-layer>
-</ac-map>
+  <ac-map
+      [sceneMode]="selectedSceneMode"
+    >
+    <!--
+      trying to disable globe projection by disabling sceneModePicker, but didn't manage so far...
+      sceneModePicker : false
+    -->
+    <ac-map-layer-provider
+      [provider]="MapLayerProviderOptions.MapTileService"
+      [alpha]="1.0"
+      [options]="{
+        url : 'https://cesiumjs.org/tilesets/imagery/blackmarble',
+        maximumLevel : 8,
+        flipXY : true
+      }">
+    </ac-map-layer-provider>
+  </ac-map>
 </div>
-
