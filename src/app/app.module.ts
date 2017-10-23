@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { AngularCesiumModule } from 'angular-cesium';
 import { CesiumMapComponent } from './cesium-map/cesium-map.component';
 import { ProjectlogoComponent } from './projectlogo/projectlogo.component';
+import { MapsLayerComponent } from './map-layer/maps-layer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CesiumMapComponent,
-    ProjectlogoComponent
+    ProjectlogoComponent,
+    MapsLayerComponent
   ],
   imports: [
     BrowserModule,
