@@ -7,7 +7,14 @@
 </ac-map-layer-provider> -->
 
 
-<ac-map-layer-provider *ngIf="appSettingsService.showMapLayer" [provider]="MapLayerProviderOptions.ArcGisMapServer" [options]="{
+<ac-map-layer-provider *ngIf="appSettingsService.showMapLayer" [provider]="MapLayerProviderOptions.ArcGisMapServer" [alpha]="0.5" [options]="{
          url : 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer'
      }">
 </ac-map-layer-provider>
+
+<!-- <ac-map-layer-provider *ngIf="appSettingsService.showMapLayer" [provider]="MapLayerProviderOptions.SingleTileImagery"
+[options]="{
+         url : 'assets/angular_cesium.png',
+         rectangle : Cesium.Rectangle.fromDegrees(-75.0, 28.0, -67.0, 29.75)
+     }">
+</ac-map-layer-provider> -->
