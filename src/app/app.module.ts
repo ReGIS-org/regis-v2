@@ -8,6 +8,7 @@ import { CesiumMapComponent } from './cesium-map/cesium-map.component';
 import { ProjectlogoComponent } from './projectlogo/projectlogo.component';
 import { MapsLayerComponent } from './map-layer/maps-layer.component';
 import { MenuComponent } from './menu/menu.component';
+import { MdlIconModule } from '@angular-mdl/core';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MenuComponent } from './menu/menu.component';
   ],
   imports: [
     MdlModule,
+    MdlIconModule,
     BrowserModule,
     AngularCesiumModule.forRoot()
   ],

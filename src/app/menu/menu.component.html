@@ -1,27 +1,26 @@
-<button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
-<mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-left">
-   <mdl-menu-item mdl-ripple (click)="action()">Some Action</mdl-menu-item>
-   <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Another Action</mdl-menu-item>
-   <mdl-menu-item mdl-ripple disabled>Disabled Action</mdl-menu-item>
-   <mdl-menu-item>Yet Another Action</mdl-menu-item>
-</mdl-menu>
-  
-  
-<button mdl-button #btn2="mdlButton" (click)="m2.toggle($event, btn2)" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
-<mdl-menu #m2="mdlMenu" mdl-menu-position="bottom-right">
-   ...
-</mdl-menu>
-  
-  
-<button mdl-button #btn3="mdlButton" [mdl-toggle-menu]="m3" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
-<mdl-menu #m3="mdlMenu" mdl-menu-position="top-left">
-   ...
-</mdl-menu>
-  
-  
-<button mdl-button #btn4="mdlButton" [mdl-toggle-menu]="m4" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
-<mdl-menu #m4="mdlMenu" mdl-menu-position="top-right">
-   ...
-</mdl-menu>
-
-
+<div class="demo-container demo-layout-transparent">
+    <mdl-layout #mdlLayout1="mdlLayout">
+       <mdl-layout-header mdl-layout-header-transparent>
+          <mdl-layout-header-row>
+             <mdl-layout-title>Title</mdl-layout-title>
+             <mdl-layout-spacer></mdl-layout-spacer>
+             <nav class="mdl-navigation">
+                <a class="mdl-navigation__link">Link 1</a>
+                <a class="mdl-navigation__link">Link 2</a>
+                <a class="mdl-navigation__link">Link 3</a>
+             </nav>
+          </mdl-layout-header-row>
+       </mdl-layout-header>
+       <mdl-layout-drawer>
+          <mdl-layout-title>Title</mdl-layout-title>
+          <nav class="mdl-navigation">
+             <a class="mdl-navigation__link" (click)="mdlLayout1.closeDrawer()">Link 1</a>
+             <a class="mdl-navigation__link" (click)="mdlLayout1.closeDrawer()">Link 2</a>
+             <a class="mdl-navigation__link" (click)="mdlLayout1.closeDrawer()">Link 3</a>
+          </nav>
+       </mdl-layout-drawer>
+       <mdl-layout-content>
+          <router-outlet></router-outlet>
+       </mdl-layout-content>
+    </mdl-layout>
+</div>
