@@ -1,0 +1,27 @@
+<button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
+<mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-left">
+   <mdl-menu-item mdl-ripple (click)="action()">Some Action</mdl-menu-item>
+   <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Another Action</mdl-menu-item>
+   <mdl-menu-item mdl-ripple disabled>Disabled Action</mdl-menu-item>
+   <mdl-menu-item>Yet Another Action</mdl-menu-item>
+</mdl-menu>
+  
+  
+<button mdl-button #btn2="mdlButton" (click)="m2.toggle($event, btn2)" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
+<mdl-menu #m2="mdlMenu" mdl-menu-position="bottom-right">
+   ...
+</mdl-menu>
+  
+  
+<button mdl-button #btn3="mdlButton" [mdl-toggle-menu]="m3" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
+<mdl-menu #m3="mdlMenu" mdl-menu-position="top-left">
+   ...
+</mdl-menu>
+  
+  
+<button mdl-button #btn4="mdlButton" [mdl-toggle-menu]="m4" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
+<mdl-menu #m4="mdlMenu" mdl-menu-position="top-right">
+   ...
+</mdl-menu>
+
+
