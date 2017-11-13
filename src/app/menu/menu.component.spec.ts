@@ -16,7 +16,8 @@ describe('MenuComponent', () => {
         MdlModule,
         MdlIconModule,
         RouterTestingModule
-      ]
+      ],
+      schemas:      [ CUSTOM_ELEMENTS_SCHEMA ]
     })
       .compileComponents();
   }));

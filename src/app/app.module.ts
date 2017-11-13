@@ -9,6 +9,7 @@ import { CesiumMapComponent } from './cesium-map/cesium-map.component';
 import { ProjectlogoComponent } from './projectlogo/projectlogo.component';
 import { MapsLayerComponent } from './map-layer/maps-layer.component';
 import { MenuComponent } from './menu/menu.component';
+import { LayerSelectorComponent } from './layer-selector/layer-selector.component';
 
 const routes: Routes = [];
 
@@ -18,7 +19,8 @@ const routes: Routes = [];
     CesiumMapComponent,
     ProjectlogoComponent,
     MapsLayerComponent,
-    MenuComponent
+    MenuComponent,
+    LayerSelectorComponent
   ],
   imports: [
     MdlModule,
