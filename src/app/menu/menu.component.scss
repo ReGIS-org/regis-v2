@@ -1,0 +1,24 @@
+@import '~@angular-mdl/core/scss/material-design-lite';
+
+.mdl-layout__title, .mdl-layout-title {
+    @extend .mdl-layout__title;
+    color: rgb(255,255,255);
+}
+
+.mdl-layout-title {
+    @extend .mdl-layout-title;
+    color: rgb(255,255,255);
+}
+
+.mdl-layout__drawer-button {
+    @extend .mdl-layout__drawer-button;
+    pointer-events: all;
+}
+
+.interface-mute {
+    pointer-events: none;
+}
+
+.interface-clickable {
+    pointer-events: all;
+}

@@ -1,10 +1,10 @@
-<div class="demo-container demo-layout-transparent">
+<div class="demo-container demo-layout-transparent interface-mute">
     <mdl-layout #mdlLayout1="mdlLayout">
        <mdl-layout-header mdl-layout-header-transparent>
           <mdl-layout-header-row>
              <mdl-layout-title>Title</mdl-layout-title>
              <mdl-layout-spacer></mdl-layout-spacer>
-             <nav class="mdl-navigation">
+             <nav class="mdl-navigation interface-clickable">
                 <a class="mdl-navigation__link">Link 1</a>
                 <a class="mdl-navigation__link">Link 2</a>
                 <a class="mdl-navigation__link">Link 3</a>
@@ -13,7 +13,7 @@
        </mdl-layout-header>
        <mdl-layout-drawer>
           <mdl-layout-title>Title</mdl-layout-title>
-          <nav class="mdl-navigation">
+          <nav class="mdl-navigation interface-clickable">
              <a class="mdl-navigation__link" (click)="mdlLayout1.closeDrawer()">Link 1</a>
              <a class="mdl-navigation__link" (click)="mdlLayout1.closeDrawer()">Link 2</a>
              <a class="mdl-navigation__link" (click)="mdlLayout1.closeDrawer()">Link 3</a>
