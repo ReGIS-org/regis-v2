@@ -24,12 +24,13 @@ export class CesiumMapComponent implements AfterViewInit, OnInit {
       timeline: true,
       infoBox: false,
       fullscreenButton: false,
-      baseLayerPicker: true,
-      animation: true,
+      baseLayerPicker: false,
+      animation: false,
       homeButton: false,
-      geocoder: true,
+      geocoder: false,
       navigationHelpButton: false,
       navigationInstructionsInitiallyVisible: false,
+      sceneModePicker: false,
       show3dtiles: true
     };
 
@@ -37,8 +38,6 @@ export class CesiumMapComponent implements AfterViewInit, OnInit {
       viewer.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
       viewer.bottomContainer.remove();
     };
-
-    this.appSettingsService.showTracksLayer = true;
   }
 
   ngOnInit() {
