@@ -35,6 +35,7 @@ const routes: Routes = [];
     RouterModule.forRoot(routes),
     AngularCesiumModule.forRoot()
   ],
+  // entryComponents: [ AddLayerModalComponent ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
