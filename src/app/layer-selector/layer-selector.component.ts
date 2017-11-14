@@ -24,4 +24,10 @@ export class LayerSelectorComponent implements OnInit, AfterContentInit {
   showLayer() {
     this.layerService.showLayer();
   }
+
+  showWmsLayer() {
+    console.log("Call service to show WMS layer...");
+    const wmsUrl = "https://demo.boundlessgeo.com/geoserver/ows?&service=WMS&request=GetMap&layers=ne%3Ane_10m_admin_0_boundary_lines_land&styles=&format=image%2Fjpeg&transparent=false&version=1.1.1&height=256&width=256&srs=EPSG%3A3857&bbox=-10018754.171394622,0,-5009377.085697311,5009377.085697314";
+    this.layerService.showWMSLayer(wmsUrl);
+  }
 }
