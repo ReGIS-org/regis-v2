@@ -9,13 +9,10 @@
   leaveTransitionDuration: 400}" (show)="onDialogShow(dialogRef)" (hide)="onDialogHide()">
   <h3 class="mdl-dialog__title">Add layer</h3>
   <div class="mdl-dialog__content">
-    <mdl-textfield type="text" label="Layer name" [(ngModel)]="layername" floating-label autofocus></mdl-textfield>
-    <select id="formatselect" name="formatselect" class="mdl-selectfield__select">
-      <option value="geojson">geojson</option>
-      <option value="shape">shape</option>
-      <option value="grid">grid</option>
-    </select>
-    <label class="mdl-selectfield__label" for="fileformatselect">Choose layer format</label>    
+    <mdl-textfield type="text" label="Layer name" [(ngModel)]="layerName" floating-label autofocus></mdl-textfield>
+    <mdl-select label="Layer format" [(ngModel)]="layerFormat" floating-label autofocus>
+      <mdl-option *ngFor="let format of formats" [value]="format">{{format}}</mdl-option>
+    </mdl-select>
   </div>
   <div class="mdl-dialog__actions">
     <button mdl-button (click)="saveLayer()" mdl-button-type="raised" mdl-colored="primary" mdl-ripple>Save</button>

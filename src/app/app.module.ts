@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { MdlModule, MdlIconModule } from '@angular-mdl/core';
 import { Routes, RouterModule } from '@angular/router';
+
+import { MdlModule, MdlIconModule } from '@angular-mdl/core';
+import { MdlPopoverModule } from '@angular-mdl/popover';
+import { MdlSelectModule } from '@angular-mdl/select';
 
 import { AppComponent } from './app.component';
 import { AngularCesiumModule } from 'angular-cesium';
@@ -31,6 +34,8 @@ const routes: Routes = [];
   imports: [
     MdlModule,
     MdlIconModule,
+    MdlPopoverModule,
+    MdlSelectModule,
     BrowserModule,
     RouterModule.forRoot(routes),
     AngularCesiumModule.forRoot()

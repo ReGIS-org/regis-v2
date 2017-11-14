@@ -11,6 +11,8 @@ export class AddLayerModalComponent {
   @ViewChild(MdlTextFieldComponent) private textFieldName: MdlTextFieldComponent;
 
   public layerName = '';
+  public layerFormat = '';
+  public formats = ['geojson', 'shape', 'grid'];
   public editedLayerName: string;
 
   constructor() {
