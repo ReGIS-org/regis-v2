@@ -5,9 +5,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Quick install
 
 ```
-npm install yarn
+npm install -g yarn
 yarn install
 npm start
+open a browser to localhost:4200
+```
+
+```
+npm test
+open a browser to localhost:9876
 ```
 
 ## Development server
