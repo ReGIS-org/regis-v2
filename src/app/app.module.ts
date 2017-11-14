@@ -11,6 +11,7 @@ import { MapsLayerComponent } from './map-layer/maps-layer.component';
 import { MenuComponent } from './menu/menu.component';
 import { LayerSelectorComponent } from './layer-selector/layer-selector.component';
 import { RegisLayoutComponent } from './regis-layout/regis-layout.component';
+import { AddLayerModalComponent } from './add-layer-modal/add-layer-modal.component';
 
 const routes: Routes = [];
 
@@ -22,7 +23,8 @@ const routes: Routes = [];
     MapsLayerComponent,
     MenuComponent,
     LayerSelectorComponent,
-    RegisLayoutComponent
+    RegisLayoutComponent,
+    AddLayerModalComponent
   ],
   imports: [
     MdlModule,

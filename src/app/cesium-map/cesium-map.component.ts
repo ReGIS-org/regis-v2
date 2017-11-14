@@ -4,7 +4,7 @@ import { ConnectableObservable } from 'rxjs/observable/ConnectableObservable';
 import { AcNotification, AcMapComponent, ViewerConfiguration, SceneMode } from 'angular-cesium';
 import { AppSettingsService } from '../services/app-settings-service';
 import { MapLayerProviderOptions } from '../models/map-layer-provider-options.enum';
-// import { TracksLayerComponent } from '../tracks-layer/tracks-layer.component';
+
 
 
 @Component({
@@ -14,7 +14,6 @@ import { MapLayerProviderOptions } from '../models/map-layer-provider-options.en
   styleUrls: ['./cesium-map.component.css']
 })
 export class CesiumMapComponent implements AfterViewInit, OnInit {
-  // @ViewChild('layer') tracksLayer: TracksLayerComponent;
   sceneMode = SceneMode.SCENE3D;
 
   constructor(private viewerConf: ViewerConfiguration,
@@ -45,9 +44,4 @@ export class CesiumMapComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit(): void {
   }
-
-  removeAll() {
-    // this.tracksLayer.removeAll();
-  }
-
 }
