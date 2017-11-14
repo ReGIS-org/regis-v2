@@ -1,7 +1,9 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { LayerService } from '../services/layer-service';
 import { LayerSelectorComponent } from './layer-selector.component';
+import { MapsManagerService } from 'angular-cesium';
 
 describe('LayerSelectorComponent', () => {
   let component: LayerSelectorComponent;
@@ -10,7 +12,8 @@ describe('LayerSelectorComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ LayerSelectorComponent ],
-      schemas:      [ CUSTOM_ELEMENTS_SCHEMA ]
+      schemas:      [ CUSTOM_ELEMENTS_SCHEMA ],
+      providers: [LayerService, MapsManagerService]
     })
     .compileComponents();
   }));
