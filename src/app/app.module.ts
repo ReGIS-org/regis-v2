@@ -12,6 +12,7 @@ import { MenuComponent } from './menu/menu.component';
 import { LayerSelectorComponent } from './layer-selector/layer-selector.component';
 import { RegisLayoutComponent } from './regis-layout/regis-layout.component';
 import { AddLayerModalComponent } from './add-layer-modal/add-layer-modal.component';
+import { UploadDataModalComponent } from './upload-data-modal/upload-data-modal.component';
 
 const routes: Routes = [];
 
@@ -24,7 +25,8 @@ const routes: Routes = [];
     MenuComponent,
     LayerSelectorComponent,
     RegisLayoutComponent,
-    AddLayerModalComponent
+    AddLayerModalComponent,
+    UploadDataModalComponent
   ],
   imports: [
     MdlModule,
