@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LayerService } from '../services/layer-service'
+import { LayerService } from '../services/layer-service';
 
 
 @Component({
@@ -10,14 +10,13 @@ import { LayerService } from '../services/layer-service'
 })
 export class LayerSelectorComponent implements OnInit {
 
-  constructor(private layerService: LayerService) { 
+  constructor(private layerService: LayerService) {
   }
 
   ngOnInit() {
   }
 
   showLayer() {
-    console.log("Call service to show layer...");
     this.layerService.showLayer();
   }
 

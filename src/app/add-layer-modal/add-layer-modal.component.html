@@ -1,0 +1,16 @@
+<mdl-dialog #editLayerDialog [mdl-dialog-config]="{
+  clickOutsideToClose: false,
+  styles:{'width': '300px'},
+  isModal:true,
+  openFrom: editLayerButton,
+  enterTransitionDuration: 400,
+  leaveTransitionDuration: 400}" (show)="onDialogShow(dialogRef)" (hide)="onDialogHide()">
+  <h3 class="mdl-dialog__title">Add layer</h3>
+  <div class="mdl-dialog__content">
+    <mdl-textfield type="text" label="Layer name" [(ngModel)]="layername" floating-label autofocus></mdl-textfield>
+  </div>
+  <div class="mdl-dialog__actions">
+    <button mdl-button (click)="saveLayer()" mdl-button-type="raised" mdl-colored="primary" mdl-ripple>Save</button>
+    <button mdl-button (click)="editLayerDialog.close()" mdl-ripple>Cancel</button>
+  </div>
+</mdl-dialog>
