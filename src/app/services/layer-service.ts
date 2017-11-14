@@ -6,11 +6,14 @@ export class LayerService {
 
   constructor(private mapsManagerService: MapsManagerService) { }
 
+  getLayers() {
+    let viewer = this.mapsManagerService.getMap().getCesiumViewer();
+    let layers = viewer.scene.imageryLayers
+    return layers;
+  }
+
   showLayer() {
-    console.log("Do show layer...");
-    const viewer = this.mapsManagerService.getMap().getCesiumViewer();
-    
-    const layers = viewer.scene.imageryLayers;
+    const layers = this.getLayers();
     
     const s = 0;
     const n = 10;
@@ -21,5 +24,14 @@ export class LayerService {
       rectangle : Cesium.Rectangle.fromDegrees(w,s,e,n)
     }));
     l1750.alpha = 0.75;
+  }
+
+  showWMSLayer(wmsUrl: String) {
+    let layerProvider = new Cesium.WebMapServiceImageryProvider({
+      url: wmsUrl
+    });
+
+    let layers = this.getLayers();
+    layers.addImageryProvider(layerProvider);
   }
 }
