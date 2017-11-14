@@ -1,5 +1,5 @@
 <div class="demo-container demo-layout-transparent interface-mute">
-    <mdl-layout #mdlLayout1="mdlLayout">
+    <app-regis-layout #regisLayout1="regisLayout">
        <mdl-layout-header mdl-layout-header-transparent>
           <mdl-layout-header-row>
              <mdl-layout-title>Title</mdl-layout-title>
@@ -11,16 +11,16 @@
              </nav>
           </mdl-layout-header-row>
        </mdl-layout-header>
-       <mdl-layout-drawer>
+       <mdl-layout-drawer #menuDrawer>
           <mdl-layout-title>Title</mdl-layout-title>
           <nav class="mdl-navigation interface-clickable">
-            <app-layer-selector class="mdl-navigation__link" (click)="mdlLayout1.closeDrawer()"></app-layer-selector>
-             <a class="mdl-navigation__link" (click)="mdlLayout1.closeDrawer()">Link 2</a>
-             <a class="mdl-navigation__link" (click)="mdlLayout1.closeDrawer()">Link 3</a>
+            <app-layer-selector class="mdl-navigation__link"></app-layer-selector>
+             <a class="mdl-navigation__link" (click)="regisLayout1.closeDrawer()">Link 2</a>
+             <a class="mdl-navigation__link" (click)="regisLayout1.closeDrawer()">Link 3</a>
           </nav>
        </mdl-layout-drawer>
        <mdl-layout-content>
           <router-outlet></router-outlet>
        </mdl-layout-content>
-    </mdl-layout>
+    </app-regis-layout>
 </div>

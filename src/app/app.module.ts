@@ -10,6 +10,7 @@ import { ProjectlogoComponent } from './projectlogo/projectlogo.component';
 import { MapsLayerComponent } from './map-layer/maps-layer.component';
 import { MenuComponent } from './menu/menu.component';
 import { LayerSelectorComponent } from './layer-selector/layer-selector.component';
+import { RegisLayoutComponent } from './regis-layout/regis-layout.component';
 
 const routes: Routes = [];
 
@@ -20,7 +21,8 @@ const routes: Routes = [];
     ProjectlogoComponent,
     MapsLayerComponent,
     MenuComponent,
-    LayerSelectorComponent
+    LayerSelectorComponent,
+    RegisLayoutComponent
   ],
   imports: [
     MdlModule,
