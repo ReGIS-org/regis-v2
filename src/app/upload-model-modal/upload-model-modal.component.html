@@ -1,0 +1,18 @@
+<button #editModelButton mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple (click)="editModelDialog.show()">Edit Model Dialog</button>
+
+<mdl-dialog #editModelDialog [mdl-dialog-config]="{
+  clickOutsideToClose: false,
+  styles:{'width': '400px'},
+  isModal:true,
+  openFrom: editModelButton,
+  enterTransitionDuration: 400,
+  leaveTransitionDuration: 400}" (show)="onDialogShow(dialogRef)" (hide)="onDialogHide()">
+  <h3 class="mdl-dialog__title">Add layer</h3>
+  <div class="mdl-dialog__content">
+    <mdl-textfield type="text" label="Model name" [(ngModel)]="modelName" floating-label autofocus></mdl-textfield>
+  </div>
+  <div class="mdl-dialog__actions">
+    <button mdl-button (click)="saveModel()" mdl-button-type="raised" mdl-colored="primary" mdl-ripple>Save</button>
+    <button mdl-button (click)="editModelDialog.close()" mdl-ripple>Cancel</button>
+  </div>
+</mdl-dialog>
