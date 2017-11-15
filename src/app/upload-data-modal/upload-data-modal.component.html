@@ -1,1 +1,20 @@
 <button #uploadDataButton mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple (click)="uploadDataDialog.show()">Upload Data Dialog</button>
+
+<mdl-dialog #editLayerDialog [mdl-dialog-config]="{
+    clickOutsideToClose: false,
+    styles:{'width': '300px'},
+    isModal:true,
+    openFrom: editLayerButton,
+    enterTransitionDuration: 400,
+    leaveTransitionDuration: 400}" (show)="onDialogShow(dialogRef)" (hide)="onDialogHide()">
+    <div class="mdl-dialog__actions"></div>
+    <input type="file" id="fileLoader" name="files" title="Load File" />
+    <input type="button" id="btnOpenFileDialog" value = "Click Me !!!" onclick="openfileDialog();" />
+    </div>
+  </mdl-dialog>
+
+
+
+
+
+
