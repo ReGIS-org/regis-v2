@@ -1,7 +1,6 @@
 <p>
-    <button #editLayerButton mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple (click)="editLayerDialog.show()">Edit Layer</button>
-  <a class="mdl-navigation__link" (click)="showLayer()">Show Layer</a>
+  <button #editLayerButton mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple (click)="editLayerDialog.show()">Edit Layer</button>
 </p>
-<p>
-  <a class="mdl-navigation__link" (click)="showWmsLayer()">Show WMS Layer</a>
-</p>
+<a class="mdl-navigation__link" (click)="addTwitterLayer()">Show Twitter Layer</a>
+<a class="mdl-navigation__link" (click)="showWmsLayer()">Show WMS Layer</a>
+<a ng-if="myLayer" class="mdl-navigation__link" (click)="toggleWmsLayer()">Toggle layer: {{ myLayer }} </a>

@@ -308,6 +308,10 @@ angular-cesium@0.0.29:
     json-string-mapper "^1.0.0"
     primitive-primitives "0.0.6"
 
+angular2-uuid@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/angular2-uuid/-/angular2-uuid-1.1.1.tgz#72f03cd532b7f40032eb1ecfb9f8457384be956e"
+
 angular2parse@^1.0.5:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/angular2parse/-/angular2parse-1.0.6.tgz#27acc6669a49117b64610e293f9cfd33c840bbfb"

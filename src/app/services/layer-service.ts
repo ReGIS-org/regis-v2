@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
 import { MapsManagerService } from 'angular-cesium';
+import { UUID } from 'angular2-uuid';
 
 @Injectable()
 export class LayerService {
-
   constructor(private mapsManagerService: MapsManagerService) { }
 
-  getLayers() {
+  private _layerIndex = {id: ''};
+
+  private getLayers() {
     let viewer = this.mapsManagerService.getMap().getCesiumViewer();
-    let layers = viewer.scene.imageryLayers
+    let layers = viewer.scene.imageryLayers;
     return layers;
   }
 
-  showLayer() {
-    const layers = this.getLayers();
+  addTwitterLayer() {
+    let layers = this.getLayers();
     
     const s = 0;
     const n = 10;
@@ -26,12 +28,33 @@ export class LayerService {
     l1750.alpha = 0.75;
   }
 
-  showWMSLayer(wmsUrl: String) {
+  addWMSLayer(wmsUrl: string): string {
+    console.log('Loading WMS...');
     let layerProvider = new Cesium.WebMapServiceImageryProvider({
       url: wmsUrl
     });
 
     let layers = this.getLayers();
-    layers.addImageryProvider(layerProvider);
+    let layer = layers.addImageryProvider(layerProvider);
+    
+    let id = UUID.UUID();
+    console.log("ID: " + id);
+    this._layerIndex[id] = layer;
+
+    return id;  // Returns the index of the layer which can then be used to identify the layer.
+  }
+
+  getLayer(id: string) {
+    return this._layerIndex[id];
+  }
+
+  setLayerTransparency(id: string, alpha: Number) {
+    let layer = this.getLayer(id);
+    layer.alpha = alpha;
+  }
+
+  toggleLayer(id: string) {
+    let layer = this.getLayer(id);
+    layer.show = !layer.show;
   }
 }
