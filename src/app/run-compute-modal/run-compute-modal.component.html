@@ -1,3 +1,28 @@
-<p>
-  run-compute-modal works!
-</p>
+<button #runComputeButton mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple (click)="runComputeDialog.show()">Run simulation</button>
+
+<mdl-dialog #runComputeDialog [mdl-dialog-config]="{
+  clickOutsideToClose: false,
+  styles:{'width': '400px'},
+  isModal:true,
+  openFrom: runComputeButton,
+  enterTransitionDuration: 400,
+  leaveTransitionDuration: 400}" (show)="onDialogShow(dialogRef)" (hide)="onDialogHide()">
+  <!-- <h3 class="mdl-dialog__title">Simulation parameters</h3> -->
+  <!-- <form> -->
+    <!-- <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"> -->
+  <!-- <div class="mdl-dialog__content">
+    <input type="text" [(ngModel)]="simName" class="mdl-textfield__input" label="Simulation name" floating-label autofocus />
+    <input type="text" [(ngModel)]="maxIter" class="mdl-textfield__input" label="Maximum number of iterations" floating-label autofocus />
+    <input type="text" #stopCrtField class="mdl-textfield__input" label="Stopping criterion" floating-label autofocus /> 
+  </div> -->
+  <!-- </form> -->
+  <div class="mdl-dialog__content">
+    <mdl-textfield #simNameField type="text" [(ngModel)]="simName" label="Simulation name" floating-label autofocus></mdl-textfield>
+    <mdl-textfield #maxIterField type="text" [(ngModel)]="maxIter" label="Maximum number of iterations" floating-label autofocus></mdl-textfield>        
+    <mdl-textfield #stopCrtField type="text" [(ngModel)]="stopCrt" label="Stopping criterion" floating-label autofocus></mdl-textfield>
+  </div>
+  <div class="mdl-dialog__actions">  
+    <button mdl-button (click)="saveSimulation()" mdl-button-type="raised" mdl-colored="primary" mdl-ripple>Save</button>
+    <button mdl-button (click)="runComputeDialog.close()" mdl-ripple>Cancel</button>
+  </div>
+</mdl-dialog>

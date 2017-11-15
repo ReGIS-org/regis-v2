@@ -8,25 +8,35 @@ import { MdlTextFieldComponent, MdlDialogReference, MdlDialogComponent } from '@
 })
 export class AddLayerModalComponent {
   @ViewChild('editLayerDialog') private editLayerDialog: MdlDialogComponent;
-  @ViewChild(MdlTextFieldComponent) private textFieldName: MdlTextFieldComponent;
+  @ViewChild(MdlTextFieldComponent) private layerNameField: MdlTextFieldComponent;
+  @ViewChild('uploadBtn') private uploadBtn: any;
 
-  public layerName = '';
-  public editedLayerName: string;
+  public layerName: string;
 
-  public layerFormat = '';
+  public layerFile: File;
+  public layerFileName: string;
+
+  public layerFormat: string;
   public formats = ['geojson', 'shape', 'grid'];
 
   constructor() {
   }
 
+  public doFileChange(fileInput: any) {
+    console.log('File changed');
+    if (fileInput.target.files && fileInput.target.files[0]) {
+      console.log(fileInput.target.files[0]);
+      // Store file and fileName separately
+      this.layerFile = fileInput.target.files[0];
+      this.layerFileName = fileInput.target.files[0].name;
+    }
+  }
+
   public saveLayer() {
-    // this.selectedLayerName = this.
-    this.layerName = this.editedLayerName;
     this.editLayerDialog.close();
   }
 
   public onDialogShow(dialogRef: MdlDialogReference) {
-    this.editedLayerName = this.layerName;
     // this.textFieldName.setFocus();
   }
 

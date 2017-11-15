@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MdlModule, MdlIconModule } from '@angular-mdl/core';
 import { MdlPopoverModule } from '@angular-mdl/popover';
 import { MdlSelectModule } from '@angular-mdl/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AngularCesiumModule } from 'angular-cesium';
@@ -42,6 +43,7 @@ const routes: Routes = [];
     MdlIconModule,
     MdlPopoverModule,
     MdlSelectModule,
+    FormsModule,
     BrowserModule,
     RouterModule.forRoot(routes),
     AngularCesiumModule.forRoot()

@@ -1,13 +1,10 @@
-@import '~@angular-mdl/popover/popover';
-@import '~@angular-mdl/select/select';
-
 .mdl-layout {
-    align-items: center;
-    justify-content: center;
-  }
-  
+  align-items: center;
+  justify-content: center;
+}
+
 .mdl-button--file {
-input {
+  input {
     cursor: pointer;
     height: 100%;
     right: 0;
@@ -16,15 +13,15 @@ input {
     top: 0;
     width: 100%;
     z-index: 4;
-}
+  }
 }
 
 .mdl-textfield--file {
-.mdl-textfield__input {
+  .mdl-textfield__input {
     box-sizing: border-box;
     width: calc(100% - 32px);
-}
-.mdl-button--file {
+  }
+  .mdl-button--file {
     right: 0;
-}
+  }
 }

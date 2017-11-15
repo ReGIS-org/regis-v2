@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RunComputeModalComponent } from './run-compute-modal.component';
@@ -8,7 +9,8 @@ describe('RunComputeModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RunComputeModalComponent ]
+      declarations: [ RunComputeModalComponent ],
+      schemas:      [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
   }));
