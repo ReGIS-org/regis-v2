@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DataSelectorComponent } from './data-selector.component';
@@ -8,7 +9,8 @@ describe('DataSelectorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DataSelectorComponent ]
+      declarations: [ DataSelectorComponent ],
+      schemas:      [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
   }));

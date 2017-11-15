@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModelSelectorComponent } from './model-selector.component';
@@ -8,7 +9,8 @@ describe('ModelSelectorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModelSelectorComponent ]
+      declarations: [ ModelSelectorComponent ],
+      schemas:      [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
   }));
