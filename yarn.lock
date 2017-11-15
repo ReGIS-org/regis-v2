@@ -30,6 +30,14 @@
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/@angular-mdl/core/-/core-4.0.8.tgz#01dee7c6f92663a57ba79f248d85e6f233eba073"
 
+"@angular-mdl/popover@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@angular-mdl/popover/-/popover-0.10.0.tgz#afc0042ef7bdbcc62797f835aede443d6e0cb783"
+
+"@angular-mdl/select@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@angular-mdl/select/-/select-0.13.0.tgz#96d4636d409231dad7ea8fe10bb75e46ab0f5b7e"
+
 "@angular/animations@^4.2.4":
   version "4.4.6"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-4.4.6.tgz#fa661899a8a4e38cb7c583c7a5c97ce65d592a35"

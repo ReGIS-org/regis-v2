@@ -12,9 +12,12 @@
           </mdl-layout-header-row>
        </mdl-layout-header>
        <mdl-layout-drawer #menuDrawer>
-          <mdl-layout-title>Title</mdl-layout-title>
+          <mdl-layout-title>Menu</mdl-layout-title>
           <nav class="mdl-navigation interface-clickable">
-            <app-layer-selector></app-layer-selector>
+            <app-layer-selector class="mdl-navigation__link"></app-layer-selector>
+            <app-data-selector class="mdl-navigation__link"></app-data-selector>
+            <app-model-selector class="mdl-navigation__link"></app-model-selector>
+            <app-simulation-selector class="mdl-navigation__link"></app-simulation-selector>
           </nav>
        </mdl-layout-drawer>
        <mdl-layout-content>
