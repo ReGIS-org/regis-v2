@@ -4,21 +4,23 @@ import { MdlTextFieldComponent, MdlDialogReference, MdlDialogComponent } from '@
 @Component({
   selector: 'app-add-layer-modal',
   templateUrl: './add-layer-modal.component.html',
-  styleUrls: ['./add-layer-modal.component.css']
+  styleUrls: ['./add-layer-modal.component.scss']
 })
 export class AddLayerModalComponent {
   @ViewChild('editLayerDialog') private editLayerDialog: MdlDialogComponent;
   @ViewChild(MdlTextFieldComponent) private textFieldName: MdlTextFieldComponent;
 
   public layerName = '';
+  public editedLayerName: string;
+
   public layerFormat = '';
   public formats = ['geojson', 'shape', 'grid'];
-  public editedLayerName: string;
 
   constructor() {
   }
 
   public saveLayer() {
+    // this.selectedLayerName = this.
     this.layerName = this.editedLayerName;
     this.editLayerDialog.close();
   }
