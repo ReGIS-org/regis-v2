@@ -24,7 +24,7 @@ export class UploadModelModalComponent {
 
   public onDialogShow(dialogRef: MdlDialogReference) {
     this.editedModelName = this.modelName;
-    this.textFieldName.setFocus();
+    // this.textFieldName.setFocus();
   }
 
   public onDialogHide() {

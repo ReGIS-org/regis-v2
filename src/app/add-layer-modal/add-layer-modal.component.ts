@@ -27,7 +27,7 @@ export class AddLayerModalComponent {
 
   public onDialogShow(dialogRef: MdlDialogReference) {
     this.editedLayerName = this.layerName;
-    this.textFieldName.setFocus();
+    // this.textFieldName.setFocus();
   }
 
   public onDialogHide() {
