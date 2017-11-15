@@ -17,6 +17,7 @@ import { RegisLayoutComponent } from './regis-layout/regis-layout.component';
 import { AddLayerModalComponent } from './add-layer-modal/add-layer-modal.component';
 import { UploadDataModalComponent } from './upload-data-modal/upload-data-modal.component';
 import { UploadModelModalComponent } from './upload-model-modal/upload-model-modal.component';
+import { RunComputeModalComponent } from './run-compute-modal/run-compute-modal.component';
 import { DataSelectorComponent } from './data-selector/data-selector.component';
 import { ModelSelectorComponent } from './model-selector/model-selector.component';
 import { SimulationSelectorComponent } from './simulation-selector/simulation-selector.component';
@@ -35,6 +36,7 @@ const routes: Routes = [];
     AddLayerModalComponent,
     UploadDataModalComponent,
     UploadModelModalComponent,
+    RunComputeModalComponent,
     DataSelectorComponent,
     ModelSelectorComponent,
     SimulationSelectorComponent
