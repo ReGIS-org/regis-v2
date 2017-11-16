@@ -10,35 +10,36 @@ export class LayerService {
   private _layerIndex = {};
 
   private getLayers() {
-    let viewer = this.mapsManagerService.getMap().getCesiumViewer();
-    let layers = viewer.scene.imageryLayers;
+    const viewer = this.mapsManagerService.getMap().getCesiumViewer();
+    const layers = viewer.scene.imageryLayers;
     return layers;
   }
 
   public addTwitterLayer() {
-    let layers = this.getLayers();
-    
+    const layers = this.getLayers();
+
     const s = 0;
     const n = 10;
     const w = 0;
     const e = 10;
     const l1750 = layers.addImageryProvider(new Cesium.SingleTileImageryProvider({
-      url : 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/220px-Twitter_bird_logo_2012.svg.png',
-      rectangle : Cesium.Rectangle.fromDegrees(w,s,e,n)
+      url: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/220px-Twitter_bird_logo_2012.svg.png',
+      rectangle: Cesium.Rectangle.fromDegrees(w, s, e, n)
     }));
     l1750.alpha = 0.75;
   }
 
-  public addWMSLayer(wmsUrl: string): string {
-    let layerProvider = new Cesium.WebMapServiceImageryProvider({
-      url: wmsUrl
+  public addWMSLayer(wmsUrl: string, wmsLayers: string, proxy: any = {}, parameters: any = {}): string {
+    const layerProvider = new Cesium.WebMapServiceImageryProvider({
+      url: wmsUrl,
+      layers: wmsLayers
     });
 
-    let layers = this.getLayers();
-    let layer = layers.addImageryProvider(layerProvider);
-    
-    
-    let id = UUID.UUID();
+    const layers = this.getLayers();
+    const layer = layers.addImageryProvider(layerProvider);
+
+
+    const id = UUID.UUID();
     this._layerIndex[id] = layer;
 
     return id;  // Returns the index of the layer which can then be used to identify the layer.
@@ -49,12 +50,12 @@ export class LayerService {
   }
 
   public setLayerTransparency(id: string, alpha: Number) {
-    let layer: ImageryLayer = this.getLayer(id);
+    const layer: ImageryLayer = this.getLayer(id);
     layer.alpha = alpha;
   }
 
   public toggleLayer(id: string) {
-    let layer = this.getLayer(id);
+    const layer = this.getLayer(id);
     layer.show = !layer.show;
   }
 }

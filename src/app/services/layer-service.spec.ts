@@ -11,9 +11,9 @@ describe('LayerService', () => {
     });
   });
 
-  it('should be created', 
-  inject([LayerService, MapsManagerService], 
-    (service: LayerService) => {
-    expect(service).toBeTruthy();
-  }));
+  it('should be created',
+    inject([LayerService, MapsManagerService],
+      (service: LayerService) => {
+        expect(service).toBeTruthy();
+      }));
 });
