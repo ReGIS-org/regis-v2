@@ -1,19 +1,15 @@
 import { Injectable } from '@angular/core';
 import { MapsManagerService } from 'angular-cesium';
 import { ImageryLayer } from 'cesium/Source/Scene/ImageryLayer';
+import { ExtendedImageryLayer } from '../cesium-extensions/extendedImageryLayer';
 import { UUID } from 'angular2-uuid';
 
-interface LayerDescriptor {
-  id: string;
-  name: string;
-  layer: any;
-}
 
 @Injectable()
 export class LayerService {
   constructor(private mapsManagerService: MapsManagerService) { }
 
-  private _layerIndex: LayerDescriptor[] = [];
+  private _layerIndex: ExtendedImageryLayer[] = [];
 
   private getLayers() {
     const viewer = this.mapsManagerService.getMap().getCesiumViewer();
@@ -43,30 +39,26 @@ export class LayerService {
 
     const layers = this.getLayers();
     const layer = layers.addImageryProvider(layerProvider);
-
+    const eLayer = new ExtendedImageryLayer(name, layer);
 
     const id = UUID.UUID();
 
-    this._layerIndex.push({
-      id,
-      name,
-      layer
-    });
+    this._layerIndex.push(eLayer);
 
     return id;  // Returns the index of the layer which can then be used to identify the layer.
   }
 
-  public getLayer(id: string): ImageryLayer {
+  public getLayer(id: string): ExtendedImageryLayer {
     return this._layerIndex[id];
   }
 
   public setLayerTransparency(id: string, alpha: Number) {
-    const layer: ImageryLayer = this.getLayer(id);
-    layer.alpha = alpha;
+    const eLayer: ExtendedImageryLayer = this.getLayer(id);
+    eLayer.layer.alpha = alpha;
   }
 
   public toggleLayer(id: string) {
-    const layer = this.getLayer(id);
-    layer.show = !layer.show;
+    const eLayer = this.getLayer(id);
+    eLayer.layer.show = !eLayer.layer.show;
   }
 }

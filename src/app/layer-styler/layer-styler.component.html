@@ -1,4 +1,7 @@
 <div>
-  LayerID: {{ layerId }}
+  <mdl-checkbox [mdl-ripple]="true" (click)="toggleWmsLayer()" [(ngModel)]="layerChecked">
+    <!-- <mdl-textfield type="text" label="LayerID: {{ getLayerName() }}" [(ngModel)]="editedLayerName"></mdl-textfield> -->
+    LayerID: {{ getLayerName() }}
+  </mdl-checkbox>
   <mdl-slider min="0.0" max="1.0" step="0.1" value="1.0" (change)="updateAlpha($event)"></mdl-slider>
 </div>

@@ -4,9 +4,9 @@
   <a class="mdl-navigation__link" (click)="addTwitterLayer()">Show Twitter Layer</a>
   <a class="mdl-navigation__link" (click)="addWmsLayer()">Add WMS Layer</a>
   
-  Toggle layer:
+  <!-- Toggle layer: -->
   <div *ngFor="let myLayer of myLayers">
-    <a class="mdl-navigation__link" (click)="toggleWmsLayer(myLayer)">Layer: {{ myLayer }}</a>
+    <!-- <a class="mdl-navigation__link" (click)="toggleWmsLayer(myLayer)">Layer: {{ myLayer }}</a> -->
     <!-- Layer styler should be on a modal, but I will put it here for now. -->
     <app-layer-styler [layerId]='myLayer'></app-layer-styler>
   </div>
