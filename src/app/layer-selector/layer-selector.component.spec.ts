@@ -2,8 +2,9 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LayerService } from '../services/layer-service';
-import { LayerSelectorComponent } from './layer-selector.component';
 import { MapsManagerService } from 'angular-cesium';
+
+import { LayerSelectorComponent } from './layer-selector.component';
 
 describe('LayerSelectorComponent', () => {
   let component: LayerSelectorComponent;

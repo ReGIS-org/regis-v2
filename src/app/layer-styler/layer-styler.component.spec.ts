@@ -1,6 +1,9 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { LayerService } from '../services/layer-service';
+import { MapsManagerService } from 'angular-cesium';
+
 import { LayerStylerComponent } from './layer-styler.component';
 
 describe('LayerStylerComponent', () => {
@@ -10,7 +13,8 @@ describe('LayerStylerComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ LayerStylerComponent ],
-      schemas:      [ CUSTOM_ELEMENTS_SCHEMA ]
+      schemas:      [ CUSTOM_ELEMENTS_SCHEMA ],
+      providers: [LayerService, MapsManagerService]
     })
     .compileComponents();
   }));
