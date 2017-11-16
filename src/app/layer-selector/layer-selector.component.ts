@@ -9,7 +9,6 @@ import { LayerStylerComponent } from '../layer-styler/layer-styler.component';
   selector: 'app-layer-selector',
   templateUrl: './layer-selector.component.html',
   styleUrls: ['./layer-selector.component.css'],
-  providers: [LayerService],
   encapsulation: ViewEncapsulation.None
 })
 

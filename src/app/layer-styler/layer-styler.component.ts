@@ -5,7 +5,6 @@ import { LayerService } from '../services/layer-service';
   selector: 'app-layer-styler',
   templateUrl: './layer-styler.component.html',
   styleUrls: ['./layer-styler.component.css'],
-  providers: [LayerService]
 })
 
 export class LayerStylerComponent implements OnInit {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MapsManagerService } from 'angular-cesium';
+import { ImageryLayer } from 'cesium/Source/Scene/ImageryLayer';
 import { UUID } from 'angular2-uuid';
-import { Subject }    from 'rxjs/Subject';
 
 @Injectable()
 export class LayerService {
@@ -37,18 +37,19 @@ export class LayerService {
     let layers = this.getLayers();
     let layer = layers.addImageryProvider(layerProvider);
     
+    
     let id = UUID.UUID();
     this._layerIndex[id] = layer;
 
     return id;  // Returns the index of the layer which can then be used to identify the layer.
   }
 
-  public getLayer(id: string) {
+  public getLayer(id: string): ImageryLayer {
     return this._layerIndex[id];
   }
 
   public setLayerTransparency(id: string, alpha: Number) {
-    let layer = this.getLayer(id);
+    let layer: ImageryLayer = this.getLayer(id);
     layer.alpha = alpha;
   }
 

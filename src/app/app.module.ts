@@ -21,6 +21,7 @@ import { RunComputeModalComponent } from './run-compute-modal/run-compute-modal.
 import { ModelSelectorComponent } from './model-selector/model-selector.component';
 import { SimulationSelectorComponent } from './simulation-selector/simulation-selector.component';
 import { LayerStylerComponent } from './layer-styler/layer-styler.component';
+import { LayerService } from './services/layer-service';
 
 const routes: Routes = [];
 
@@ -51,7 +52,7 @@ const routes: Routes = [];
     AngularCesiumModule.forRoot()
   ],
   // entryComponents: [ AddLayerModalComponent ],
-  providers: [],
+  providers: [LayerService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
