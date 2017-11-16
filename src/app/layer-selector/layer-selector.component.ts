@@ -33,7 +33,7 @@ export class LayerSelectorComponent implements OnInit, AfterContentInit {
     const wmsUrl = 'https://ahocevar.com/geoserver/wms';
     const wmsLayers = 'topp:states';
 
-    const layer = this.layerService.addWMSLayer(wmsUrl, wmsLayers);
+    const layer = this.layerService.addWMSLayer('states', wmsUrl, wmsLayers);
     this.myLayers.push(layer);
   }
 

@@ -3,11 +3,17 @@ import { MapsManagerService } from 'angular-cesium';
 import { ImageryLayer } from 'cesium/Source/Scene/ImageryLayer';
 import { UUID } from 'angular2-uuid';
 
+interface LayerDescriptor {
+  id: string;
+  name: string;
+  layer: any;
+}
+
 @Injectable()
 export class LayerService {
   constructor(private mapsManagerService: MapsManagerService) { }
 
-  private _layerIndex = {};
+  private _layerIndex: LayerDescriptor[] = [];
 
   private getLayers() {
     const viewer = this.mapsManagerService.getMap().getCesiumViewer();
@@ -29,7 +35,7 @@ export class LayerService {
     l1750.alpha = 0.75;
   }
 
-  public addWMSLayer(wmsUrl: string, wmsLayers: string, proxy: any = {}, parameters: any = {}): string {
+  public addWMSLayer(name: string = 'unnamed', wmsUrl: string, wmsLayers: string, proxy: any = {}, parameters: any = {}): string {
     const layerProvider = new Cesium.WebMapServiceImageryProvider({
       url: wmsUrl,
       layers: wmsLayers
@@ -40,7 +46,12 @@ export class LayerService {
 
 
     const id = UUID.UUID();
-    this._layerIndex[id] = layer;
+
+    this._layerIndex.push({
+      id,
+      name,
+      layer
+    });
 
     return id;  // Returns the index of the layer which can then be used to identify the layer.
   }
