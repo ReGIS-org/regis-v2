@@ -17,11 +17,7 @@ export class LayerService {
   }
 
   public addTwitterLayer() {
-<<<<<<< HEAD
-    let layers = this.getLayers();
-=======
     const layers = this.getLayers();
->>>>>>> bc4cf4f946fb7ee495ebf964f4a2b1444661abe4
 
     const s = 0;
     const n = 10;
@@ -40,7 +36,6 @@ export class LayerService {
       layers: wmsLayers
     });
 
-<<<<<<< HEAD
     let layers = this.getLayers();
     let layer = layers.addImageryProvider(layerProvider);
     const eLayer = new ExtendedImageryLayer(layer);
@@ -48,14 +43,6 @@ export class LayerService {
 
     let id = UUID.UUID();
     this._layerIndex[id] = eLayer;
-=======
-    const layers = this.getLayers();
-    const layer = layers.addImageryProvider(layerProvider);
-
-
-    const id = UUID.UUID();
-    this._layerIndex[id] = layer;
->>>>>>> bc4cf4f946fb7ee495ebf964f4a2b1444661abe4
 
     return id;  // Returns the index of the layer which can then be used to identify the layer.
   }
@@ -65,7 +52,6 @@ export class LayerService {
   }
 
   public setLayerTransparency(id: string, alpha: Number) {
-<<<<<<< HEAD
     const eLayer: ExtendedImageryLayer = this.getLayer(id);
     eLayer.layer.alpha = alpha;
   }
@@ -73,14 +59,5 @@ export class LayerService {
   public toggleLayer(id: string) {
     const eLayer = this.getLayer(id);
     eLayer.layer.show = !eLayer.layer.show;
-=======
-    const layer: ImageryLayer = this.getLayer(id);
-    layer.alpha = alpha;
-  }
-
-  public toggleLayer(id: string) {
-    const layer = this.getLayer(id);
-    layer.show = !layer.show;
->>>>>>> bc4cf4f946fb7ee495ebf964f4a2b1444661abe4
   }
 }
