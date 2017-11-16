@@ -34,8 +34,4 @@ export class LayerSelectorComponent implements OnInit, AfterContentInit {
     let layer = this.layerService.addWMSLayer(wmsUrl);
     this.myLayers.push(layer);
   }
-
-  toggleWmsLayer(layer: any) {
-    this.layerService.toggleLayer(layer);
-  }
 }
