@@ -20,6 +20,7 @@ import { UploadModelModalComponent } from './upload-model-modal/upload-model-mod
 import { RunComputeModalComponent } from './run-compute-modal/run-compute-modal.component';
 import { ModelSelectorComponent } from './model-selector/model-selector.component';
 import { SimulationSelectorComponent } from './simulation-selector/simulation-selector.component';
+import { LayerStylerComponent } from './layer-styler/layer-styler.component';
 
 const routes: Routes = [];
 
@@ -36,7 +37,8 @@ const routes: Routes = [];
     UploadModelModalComponent,
     RunComputeModalComponent,
     ModelSelectorComponent,
-    SimulationSelectorComponent
+    SimulationSelectorComponent,
+    LayerStylerComponent
   ],
   imports: [
     MdlModule,
