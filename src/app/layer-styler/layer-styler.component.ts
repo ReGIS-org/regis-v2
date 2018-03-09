@@ -1,14 +1,17 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { LayerService } from '../services/layer-service';
+import { MdlTextFieldComponent, MdlDialogReference, MdlDialogComponent } from '@angular-mdl/core';
 
 @Component({
   selector: 'app-layer-styler',
   templateUrl: './layer-styler.component.html',
-  styleUrls: ['./layer-styler.component.css'],
+  styleUrls: ['./layer-styler.component.scss'],
 })
 
 export class LayerStylerComponent implements OnInit {
-  
+  @ViewChild('editLayerDialog') private editLayerDialog: MdlDialogComponent;
+  @ViewChild('uploadBtn') private uploadBtn: any;
+
   private layerLoaded = false;
   public layerChecked = true;
   public editedLayerName: string;
@@ -27,11 +30,24 @@ export class LayerStylerComponent implements OnInit {
   }
 
   updateAlpha(event: any) {
-    let alpha = event.target.valueAsNumber;
+    const alpha = event.target.valueAsNumber;
     this.layerService.setLayerTransparency(this.layerId, alpha);
   }
 
   toggleWmsLayer() {
     this.layerService.toggleLayer(this.layerId);
+  }
+
+  public saveLayerEdit() {
+    this.layerService.getLayer(this.layerId).layerName = this.editedLayerName;
+    this.editLayerDialog.close();
+  }
+
+  public onDialogShow(dialogRef: MdlDialogReference) {
+    // this.textFieldName.setFocus();
+  }
+
+  public onDialogHide() {
+    console.log(`dialog hidden`);
   }
 }
